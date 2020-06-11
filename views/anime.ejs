@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+<script src="jQuery.js", type="text/javascript"></script>
+<script type= "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+</head>
+
+<body>
+    <h1>BUBBLE SORT</h1>
+    <div class="container clearfix">
+        <div class="defination">
+            <h2>Defination</h2>
+            <p>Bubble sort, sometimes referred to as <i>sinking sort</i>, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps 
+                them if they are in the wrong order. The pass through the list is repeated until the list is sorted.</p>
+        </div>
+      
+        
+    </div>
+
+    <hr>
+    <!-- --------------------------------------------------------------------------- -->
+    <div class="fact">
+    <h2>Why the name 'Bubble Sort'??</h2>
+    <div class="content">
+        We pass this algorithm an unsorted list. For each index position in the list we compare the element at that position to the element that comes after it. If the element before is greater than the element after then we swap them.<br>
+        When bubble sort reaches the largest element in the list that element will be pushed forwards again and again until it hits the end. On the next iteration the second largest element will be pushed to the back, and so on.
+<br>
+So why is it called bubble sort? Air bubbles that are more buoyant than surrounding water rise to the top. Similarly, list elements with greater value than their surrounding elements “bubble” to the end of the list.
+    </div>
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2431.46 1372.41">
+        <defs><style>.cls-1,.cls-6{fill:#fff;}.cls-1,.cls-2,.cls-4,.cls-6{stroke:#000;}.cls-1,.cls-10,.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-miterlimit:10;}.cls-1,.cls-7,.cls-8{stroke-width:3px;}.cls-2{fill:rgba(99, 0, 58, 0.925);}.cls-3{fill:#941b94;}.cls-10,.cls-3,.cls-9{stroke:#1a1a1a;}.cls-3,.cls-5{stroke-width:4px;}.cls-10,.cls-4{fill:none;}.cls-5{fill:#7d0005;stroke:#c69c6d;}.cls-7{fill:#FFE1EC;}.cls-7,.cls-8{stroke:#f05aa0;}.cls-8{font-size:100px;font-family:OldEnglishTextMT, Old English Text MT;letter-spacing:0.05em;}.cls-9{fill:#c69c6d;}</style></defs>
+        <title>cola</title>
+        <path class="cls-1" d="M347.5,799.5c-61.34,81.36-89.85,162.41-91,216a300.41,300.41,0,0,0,8,75c5.08,19.15,10.5,28,22.72,60.22,7,18.43,15.86,42.44,27.28,74.78,23.06,65.3,36.35,107.66,18,148-7.77,17.07-16.42,23.28-28,37-43.3,51.31-49.06,114.72-54,169-2.25,24.79-22.28,260.33,100,328,28.86,16,35.61,6,200,6,160.53,0,175.4,9.58,208-11,83.33-52.59,94-183,97-220a384.08,384.08,0,0,0-5-100,356.19,356.19,0,0,0-32-94c-32.08-62.38-60-67.88-77-121-9.15-28.55-9.14-52.08-9-68,.89-104.08,68.17-135.48,83-257a378.79,378.79,0,0,0,2.17-54.75s-.64-11.89-2.17-23.25c-2.35-17.43-15.57-117.24-88-157-14.63-8-26.35-10.74-44-15-63.81-15.41-115.08-2.26-148,4C492.45,804.68,429.86,810.75,347.5,799.5Z" transform="translate(1462.88 -545.65)"/><line class="cls-2" x1="1813.88" y1="180.85" x2="2170.38" y2="180.85"/>
+        <path class="cls-3" d="M707.5,726l-3-177c-30.59,16.81-79,38.23-140,42-118.91,7.36-190.88-58.28-229-28-17.88,14.2-30.9,51.55,3,160" transform="translate(1462.88 -545.65)"/><path class="cls-4" d="M267.5,1044.5" transform="translate(1462.88 -545.65)"/><path class="cls-5" d="M270.5,1024.5c2.4-1.1,7.77,10.09,17,20,39.12,42,117.82,28.93,151,23,83.77-15,99.84-44.35,222-91,77.76-29.69,117.66-44.39,138-26,26.7,24.15,4.12,91.28-20,163-39.82,118.39-70.67,122.73-68,183,0,0,3,68.24,55,159,11.06,19.31,26,44,26,44,6.07,10,10.52,17.22,11,18,12.45,20.27,84.31,173.27,8,302-14.18,23.93-31,50-63,68-48.91,27.53-92.65,12.76-169,6-148.88-13.19-174.18,26-223,0-95.25-50.65-90.69-230.9-80-309,4.85-35.39,7.81-77.85,31-126,21.74-45.13,38.43-50.7,49-85,9.77-31.73,5.23-58.58-23-149C295.24,1105.15,264.28,1027.37,270.5,1024.5Z" transform="translate(1462.88 -545.65)"/><path class="cls-6" d="M-481.5,1239.5" transform="translate(1462.88 -545.65)"/>
+        <path class="cls-7" d="M272.5,1353.5c18.3-23.25,48.26-60.28,98-74,39.35-10.85,72.05-1.86,100,5,147.63,36.23,228.32,56,291,29,82.44-35.56,91.65-134,131-126,28.25,5.77,41.59,60.22,57.46,125,14.2,58,21.3,87,14.54,112-24.79,91.86-189.69,154.42-317,126-11.45-2.56-1.69-1.18-163-60-84.61-30.85-104.74-37.59-134-34-83.07,10.19-118.52,88.72-138,77C191.89,1521.1,216.77,1424.28,272.5,1353.5Z" transform="translate(1462.88 -545.65)"/>
+        <path class="cls-6" d="M-1001.5,1519.5" transform="translate(1462.88 -545.65)"/><text class="cls-8" transform="translate(1868.95 895.62)">COLA</text>
+        <circle class="cls-9 pop" cx="1892.88" cy="1281.35" r="24.5"/>
+        <circle class="cls-9 c2" cx="2000.38" cy="1183.85" r="25"/>
+        <circle class="cls-9" cx="2188.88" cy="426.35" r="4.5"/>
+        <circle class="cls-9" cx="2237.38" cy="434.85" r="13"/>
+        <circle class="cls-10" cx="2162.88" cy="438.35" r="7.5"/>
+        <circle class="cls-9" cx="2203.38" cy="457.85" r="10"/>
+        <circle class="cls-9" cx="2131.38" cy="457.85" r="10"/>
+        <circle class="cls-9" cx="2064.88" cy="483.35" r="15.5"/>
+        <circle class="cls-9" cx="2007.88" cy="506.35" r="7.5"/>
+        <ellipse class="cls-9" cx="1932.38" cy="533.35" rx="15" ry="5.5"/>
+        <circle class="cls-9" cx="2152.38" cy="478.85" r="11"/>
+        <circle class="cls-9" cx="1766.88" cy="533.35" r="5.5"/>
+        <circle class="cls-9 pop" cx="2088.38" cy="1325.85" r="20"/>
+        <circle class="cls-9 pop" cx="1991.88" cy="1322.35" r="16.5"/>
+        <circle class="cls-9" cx="2165.38" cy="1315.85" r="10"/>
+        <circle class="cls-9 c1" cx="2055.88" cy="1063.35" r="30.5"/>
+        <path d="M-1461.43,626.5a1.5,1.5,0,0,0,0-3,1.5,1.5,0,0,0,0,3Z" transform="translate(1462.88 -545.65)"/></svg>
+    
+    </div>
+    <!-- --------------------------------------------------------------------------- -->
+    <div class="example">
+        <h3>How Bubble Sort Works?</h3>
+        <p>We take an unsorted array for our example. Bubble sort takes Ο(n^2) time so we're keeping it short and precise.
+        </p>
+        <ul>
+            <li>14</li>
+            <li>33</li>
+            <li>27</li>
+            <li>35</li>
+            <li>10</li>
+        </ul>
+        <p>Bubble sort starts with very first two elements, comparing them to check which one is greater.</p>
+        <ul>
+            <li style="background-color: palevioletred; color: white">14</li>
+            <li style="background-color: palevioletred; color: white;">33</li>
+            <li>27</li>
+            <li>35</li>
+            <li>10</li>
+        </ul>
+        <p>In this case, value 33 is greater than 14, so it is already in sorted locations. Next, we compare 33 with 27
+        </p>
+        <ul>
+            <li>14</li>
+            <li style="background-color: palevioletred; color: white;">33</li>
+            <li style="background-color: palevioletred; color: white;">27</li>
+            <li>35</li>
+            <li>10</li>
+        </ul>
+        <p>The new array looks like this-
+        </p>
+        <ul>
+            <li>14</li>
+            <li>27</li>
+            <li>33</li>
+            <li>35</li>
+            <li>10</li>
+        </ul>
+        <p>Next we compare 33 and 35. We find that both are in already sorted positions.
+        </p>
+        <ul>
+            <li>14</li>
+            <li>27</li>
+            <li style="background-color: palevioletred; color: white;">33</li>
+            <li style="background-color: palevioletred; color: white;"> 35</li>
+            <li>10</li>
+        </ul>
+        <p>Then we move to the next two values, 35 and 10.
+        </p>
+        <ul>
+            <li>14</li>
+            <li>27</li>
+            <li>33</li>
+            <li style="background-color: palevioletred; color: white;"> 35</li>
+            <li style="background-color: palevioletred; color: white;">10</li>
+        </ul>
+        <p>We swap these values. We find that we have reached the end of the array. After one iteration, the array should look like this −
+        </p>
+        <ul>
+            <li>14</li>
+            <li>27</li>
+            <li>33</li>
+            <li>10</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">35</li>
+        </ul>
+        <p>To be precise, we are now showing how an array should look like after each iteration. After the second iteration, it should look like this −
+        </p>
+        <ul>
+            <li>14</li>
+            <li>27</li>
+            <li>10</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">33</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">35</li>
+        </ul>
+        <p>Notice that after each iteration, at least one value moves at the end.
+        </p>
+        <ul>
+            <li>14</li>
+            <li>10</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">27</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">33</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">35</li>
+        </ul>
+        <p>And when there's no swap required, bubble sorts learns that an array is completely sorted.
+        </p>
+        <ul>
+            <li style="background-color: rgb(108, 13, 121); color: white;">10</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">14</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">27</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">33</li>
+            <li style="background-color: rgb(108, 13, 121); color: white;">35</li>
+        </ul>
+
+    </div>
+    <!-- --------------------------------------------------------------------------- -->
+
+    <div class="status">
+        <div class="heading">
+            Status
+        </div>
+        
+        <div>
+            <p id="status">Click play to start</p>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------- -->
+    <div class="container">
+        <div class="frame">
+            <div class="buttons">
+                <button class="animate play">PLAY</button>
+                <button class="animate restart">RESTART</button>
+            </div>
+            <div class="elements">
+                <div class="sort e1" value="150"></div>
+                <div class="sort e2" value="80"></div>
+                <div class="sort e3" value="200"></div>
+                <div class="sort e4" value="50"></div>
+                <div class="sort e5" value= "170"></div>
+                <div class="sort e6" value="30"></div>
+                <div class="sort e7" value="100"></div>
+                <div class="sort e8" value="175"></div>
+                <div class="sort e9" value="50"></div>
+                <div class="sort e10" value= "140"></div>
+            </div>
+        </div>
+
+        <div class="code">
+            <h2>Algorithm</h2>
+            <ul>
+                <li id ="1">BUBBLE SORT(ARR[], SIZE)</li>
+                <li class = "loop outline">for i = 1 to size</li>
+                <li class ="outer">&nbsp;for j = 1 to size-i-1</li>
+                <li class ="outer">&nbsp;&nbsp;&nbsp; if&nbsp; ARR[j] > ARR[j+1]</li>
+                <li class ="swap outer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap ARR[j] and ARR[j+1]</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <!-- --------------------------------------------------------------------------- -->
+    <div class="container">
+        <div class="content">
+            <h1>Pseudocode</h1>
+            <p>
+            We observe in algorithm that Bubble Sort compares each pair of array element unless the whole array is completely sorted in an ascending order. This may cause a few complexity issues like what if the array needs no more swapping as all the elements are already ascending.
+            <br> <br>
+            To ease-out the issue, we use one flag variable swapped which will help us see if any swap has happened or not. If no swap has occurred, i.e. the array requires no more processing to be sorted, it will come out of the loop.
+        </p>
+        </div>
+        <div class="psuedo">
+           
+            <p>
+                procedure bubbleSort( list : array of items ) <br>
+            
+                loop = list.count; <br>
+                
+                for i = 0 to loop-1 do: <br>
+                   swapped = false <br>
+                    <br> 
+                   for j = 0 to loop-1 do: <br>   <br>
+                   
+                     <i>/* compare the adjacent elements */ </i> <br>
+                      if list[j] > list[j+1] then <br>
+                      <br>
+                         <i>/* swap them */ </i><br>
+                         swap( list[j], list[j+1] ) <br>		 
+                         swapped = true <br>
+                      end if <br>
+                      
+                   end for <br>
+                   <br>
+                   <i>/*if no number was swapped that means </i><br> 
+                   <i> array is sorted now, break the loop.*/</i> <br>
+                   if(not swapped) then <br>
+                      break <br>
+                   end if <br>
+                   
+                end for <br>
+                
+             end procedure return list <br>
+               </p> 
+        </div>
+ 
+    
+</div>
+<!-- --------------------------------------------------------------------------- -->
+<div class="container">
+    <div class="complexity content">
+        <h1>Complexity</h1>
+        <p>
+           <b>Worst and Average Case Time Complexity:</b>  O(n*n). Worst case occurs when array is reverse sorted. <br>
+          <br> <b>Best Case Time Complexity:</b>  O(n). Best case occurs when array is already sorted. <br>
+           <br><b>Auxiliary Space:</b>  O(1) <br>   
+           <br> <b>Boundary Cases:</b>  Bubble sort takes minimum time (Order of n) when elements are already sorted. <br>            Sorting In Place: Yes <br>
+            <br><b>Stable:</b>  Yes <br>
+           <br> Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.
+        </p>
+    </div>
+</div>
+  
+<div class="container">
+<div class="comment">
+    <h2>What could be better than sharing your thoughts!!</h2>
+    <form action="\comment" method="POST">
+        <textarea name="comment" rows="10" placeholder="Type your comments here..."></textarea>
+        <input type="submit">
+    </form>
+</div>
+</div>
+<a href="/">Click to go back to the Home page</a>
+
+    <script src="anime.js" type="text/javascript"></script>
+</body>
+
+</html>
