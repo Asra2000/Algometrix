@@ -1,0 +1,80 @@
+*::after *::before{
+    box-sizing: border-box;
+}
+html{
+   background-image: linear-gradient(180deg, rgb(12, 2, 36), rgb(0, 41, 0));
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    background-image: url('https://images.unsplash.com/photo-1473081556163-2a17de81fc97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+    /* background-size: cover; */
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.form-container{
+    width: 25%;
+    height: 50%;
+    background-color: rgba(255, 245, 190, 0.3);
+    border-top: 3px solid rgb(5, 202, 5) ;
+    border-top-left-radius:1rem ;
+    border-top-right-radius:1rem ;
+    border-bottom-left-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+
+}
+form{
+    /* border: 1px solid red; */
+    width: 60%;
+    margin: 10% 20%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+form input{
+        font-size:medium ;
+        padding: 0.6rem;
+        outline: none;
+        border-radius: 0.2rem;
+        background-color: white;
+        border-color: white;
+
+
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+input:focus{
+    border-top: 4px solid rgb(1, 151, 114);
+
+}
+button{
+    width: 9rem;
+    height: 3rem;
+    background-color: rgb(51, 255, 0);
+    border: none;
+    font-family: sans-serif;
+    font-size: medium;
+    color: rgb(19, 17, 17);
+    letter-spacing: 0.2rem;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+button:hover{
+    border: 1px solid white;
+    background-color: rgb(88, 170, 5);
+}
